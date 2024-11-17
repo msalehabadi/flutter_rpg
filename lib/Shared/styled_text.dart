@@ -9,7 +9,7 @@ class StyledText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text, style: GoogleFonts.kanit(
-     textStyle:  Theme.of(context).textTheme.bodyMedium
+    textStyle:  Theme.of(context).textTheme.bodyMedium
     ));
   }
 }
@@ -22,7 +22,7 @@ class StyledHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text.toUpperCase(), style: GoogleFonts.kanit(
-      textStyle:  Theme.of(context).textTheme.bodyMedium
+      textStyle:  Theme.of(context).textTheme.headlineMedium
     ));
   }
 }
