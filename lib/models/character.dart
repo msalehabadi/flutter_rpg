@@ -1,11 +1,8 @@
 import 'package:flutter_rpg/models/stats.dart';
 
 class Character with Stats {
-
   //constructor
-  Character({
-    required this.name, required this.slogan, required this.id
-  });
+  Character({required this.name, required this.slogan, required this.id});
 
   //fields
   final String name;
@@ -13,8 +10,11 @@ class Character with Stats {
   final String id;
   bool _isFav = false;
 
+  //getters
+  get isFav => _isFav;
+
+  // methods
   void toggleISFav() {
     _isFav = !_isFav;
   }
-
 }
