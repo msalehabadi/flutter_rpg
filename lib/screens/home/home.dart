@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rpg/Shared/styled_button.dart';
 import 'package:flutter_rpg/Shared/styled_text.dart';
 
 class Home extends StatefulWidget {
@@ -10,27 +9,30 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List characters = ['mario', 'luafsaf', 'asfasf', 'peach'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const StyledTitle('Your Charecters'),
+        title: const StyledHeading('Your Charecters'),
         centerTitle: true,
       ),
       body: Container(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            const StyledText('Charecter List'),
-            const StyledHeading('Character List'),
-            const StyledTitle('Charecter list'),
-
-            StyledButton(
-              onPressed: () {},
-              child: const StyledHeading('Create New'),
-            )
-          ]
-        ),
+        child: Column(children: [
+          Expanded(
+              child: ListView.builder(
+                  itemCount: characters.length,
+                  itemBuilder: (_, index) {
+                    return Container(
+                      color: Colors.grey[800],
+                      padding: const EdgeInsets.all(40),
+                      margin: const EdgeInsets.only(bottom: 40),
+                      child: Text(characters[index]),
+                    );
+                  }))
+        ]),
       ),
     );
   }
