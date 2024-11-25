@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rpg/Shared/styled_text.dart';
+import 'package:flutter_rpg/screens/home/character_card.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -25,12 +26,7 @@ class _HomeState extends State<Home> {
               child: ListView.builder(
                   itemCount: characters.length,
                   itemBuilder: (_, index) {
-                    return Container(
-                      color: Colors.grey[800],
-                      padding: const EdgeInsets.all(40),
-                      margin: const EdgeInsets.only(bottom: 40),
-                      child: Text(characters[index]),
-                    );
+                    return CharacterCard(characters[index]);
                   }))
         ]),
       ),
